@@ -43,6 +43,8 @@ const SignUp = () => {
                 password_confirmation: passwordConfirmationInputElement.value,
             };
 
+            console.log(payload);
+
             api.post("/signup", payload)
                 .then((response: AxiosResponse) => {
                     const data = response.data;
@@ -53,10 +55,12 @@ const SignUp = () => {
                     const response = err.response;
                     if (response && response.status === 422) {
                         setErrors(response.data.errors);
+                        console.log(err);
                     }
                 });
         }
     };
+
     return (
         <div className="login-signup-form animated fadeInDown">
             <div className="form">

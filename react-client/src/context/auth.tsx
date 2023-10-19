@@ -30,15 +30,17 @@ type ContextProviderProps = {
 
 export const AuthProvider = ({ children }: ContextProviderProps) => {
     const [user, setUser] = useState<User>({ name: "Welliton" });
-    const [token, _setToken] = useState<string | null>();
+    const [token, _setToken] = useState<string | null>(
+        localStorage.getItem("ACCESS_TOKEN")
+    );
     const [notification, _setNotification] = useState<Notification>("");
 
     const setToken = (token: string | null) => {
         _setToken(token);
         if (token) {
-            //
+            localStorage.setItem("ACCESS_TOKEN", token);
         } else {
-            //
+            localStorage.removeItem("ACCESS_TOKEN");
         }
     };
 

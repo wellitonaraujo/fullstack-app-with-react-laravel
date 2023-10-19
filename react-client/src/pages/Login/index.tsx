@@ -25,7 +25,7 @@ const Login = () => {
                 password: passwordInputElement.value,
             };
 
-            api.post("/signup", payload)
+            api.post("/login", payload)
                 .then(({ data }) => {
                     setUser(data.user);
                     setToken(data.token);
