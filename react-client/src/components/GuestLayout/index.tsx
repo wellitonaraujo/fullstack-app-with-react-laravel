@@ -1,14 +1,13 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
 
-const DefaultLayout = () => {
+const GuestLayout = () => {
     return (
         <div>
-            <div>
-                <Outlet />
-            </div>
+            GuestLayout
+            <div>Apenas visitantes</div>
+            <Outlet />
         </div>
     );
 };
 
-export default DefaultLayout;
+export default GuestLayout;

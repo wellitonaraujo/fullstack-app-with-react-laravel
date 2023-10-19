@@ -3,9 +3,10 @@ import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 //import Users from "../pages/Users";
 import NotFounder from "../pages/NotFounder";
-import DefaultLayout from "../components/GuestLayout";
-import GuestLayout from "../components/DefaultLayout";
+import DefaultLayout from "../components/DefaultLayout";
+import GuestLayout from "../components/GuestLayout";
 import Dashboard from "../pages/Dashboard";
+import Users from "../pages/Users";
 
 const router = createBrowserRouter([
     {
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard",
                 element: <Dashboard />,
+            },
+
+            {
+                path: "/users",
+                element: <Users />,
             },
         ],
     },
